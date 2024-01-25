@@ -1,0 +1,19 @@
+<h1>task site</h1>
+<h1>add task</h1>
+
+<form action="/store" method="POST">
+  <input type="text" name="data" placeholder="Enter your data">
+  <button type="submit">Store</button>
+</form>
+<ul>
+    <% for (let i = 0; i < user.tasks.length; i++) { %>
+      <li>
+        <%= user.tasks[i] %>
+        <form action="/delete" method="POST" style="display: inline;">
+          <input type="hidden" name="taskId" value="<%= i %>">
+          <button type="submit">Done</button>
+        </form>
+      </li>
+    <% } %>
+  </ul>
+<li><a href="/logout">Logout</a></li>
